@@ -1,0 +1,39 @@
+package com.spring.student.demo.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.spring.student.demo.dao.studentRepositry.studentApiRepos;
+import com.spring.student.demo.model.student;
+
+@Service
+public class StudentService {
+	@Autowired
+	private studentApiRepos repos;
+	public List<student> getAllStudents (int page , int size){
+		Pageable pageable = PageRequest.of(page, size);
+		return repos.findAll(pageable).getContent();
+	}
+	
+	public Optional<student> getById(int id) {
+		return repos.findById(id);
+	}
+public student AddStudent(student s) {
+		return repos.save(s);
+	}
+
+public student updateStudent(student s) {
+	return repos.save(s);
+}
+public void deleteStudent( int id) {
+	repos.deleteById(id);
+}
+
+
+}

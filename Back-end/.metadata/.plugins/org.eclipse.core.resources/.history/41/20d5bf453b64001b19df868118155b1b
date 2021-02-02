@@ -1,0 +1,5 @@
+package com.spring.student.demo.configure;
+
+public class JwtAuthorizationFilter {
+
+}

@@ -1,0 +1,37 @@
+package com.spring.student.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.spring.student.demo.dao.studentRepositry.studentApiRepos;
+import com.spring.student.demo.model.student;
+
+@Service
+public class StudentService {
+	@Autowired
+	private studentApiRepos repos;
+	public List<student> getAllStudents (){
+		return repos.findAll();
+	}
+	
+	public student getById(int id) {
+		return repos.findById(id).get();
+	}
+public student AddStudent(student s) {
+		return repos.save(s);
+	}
+
+public student updateStudent(student s) {
+	return repos.save(s);
+}
+public void deleteStudent( int id) {
+	repos.deleteById(id);
+}
+public List<student> getByIDd(int id){
+	return repos.findById(id);
+			}
+
+}

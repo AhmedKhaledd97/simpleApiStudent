@@ -1,0 +1,12 @@
+.table
+{
+  margin-top: 50px;
+
+}
+.table button {
+  margin-right: 5px;
+}
+.btn-danger{
+  font-size: 20px;
+  margin: 20px;
+}

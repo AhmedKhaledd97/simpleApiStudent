@@ -1,0 +1,14 @@
+.mr-auto, .mx-auto {
+  margin-right: 130px !important;
+}
+.control
+{
+  position: absolute;
+  right: 39px;
+}
+.control button,
+.form-inline button
+{
+  margin-left: 5px;
+  color: white;
+}

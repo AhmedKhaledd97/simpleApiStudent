@@ -1,0 +1,34 @@
+<div class="alert alert-success" *ngIf="message">{{message}}</div>
+<table  class="table table-striped table-dark">
+  <thead>
+  <tr>
+    <th scope="col">#ID</th>
+    <th scope="col">Full Name</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Age</th>
+    <th scope="col">Address</th>
+    <th scope="col">Options</th>
+
+  </tr>
+  </thead>
+  <tbody *ngIf="students.length != 0 ">
+  <tr *ngFor="let studs of students">
+    <th scope="row">{{studs.id}}</th>
+    <td>{{studs.name}}</td>
+    <td>{{studs.phone}}</td>
+    <td>{{studs.gender}}</td>
+    <td>{{studs.age}}</td>
+    <td>{{studs.address}}</td>
+    <td>
+      <button class = "btn btn-success" routerLink="options/{{studs.id}}">Update</button>
+      <button class = "btn btn-primary" (click)="removeStudent(studs.id)">Delete</button>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+<div *ngIf="students.length == 0" class="alert alert-danger">No Data Found</div>
+
+<button routerLink="options" class = "btn btn-danger" >Add</button>
